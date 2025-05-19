@@ -9,6 +9,9 @@ import {
   AiOutlineTeam,
   AiOutlineAppstore,
   AiOutlineApartment,
+  AiOutlineSearch,
+  AiOutlineBell,
+  AiOutlineMail,
 } from "react-icons/ai";
 import Link from "next/link";
 
@@ -38,8 +41,8 @@ const Header = () => {
   return (
     <div className="">
       {/* Mobile Version */}
-      <header>
-        <div className="p-4 border-b border-gray-400 relative">
+      <header className="md:hidden">
+        <div className="p-4 border-b border-gray-300 relative">
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-2 ">
               <Avatar>
@@ -47,7 +50,7 @@ const Header = () => {
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>
 
-              <div className="text-xs">Sarah Miller</div>
+              <div className="text-xs font-semibold">Sarah Miller</div>
             </div>
 
             <button className="cursor-pointer" onClick={toggleMenu}>
@@ -56,6 +59,9 @@ const Header = () => {
           </div>
 
           <div className="w-full flex items-center gap-3 mt-4 bg-gray-100 rounded-md py-2 px-4">
+            <span>
+              <AiOutlineSearch />
+            </span>
             <input
               type="text"
               name=""
@@ -86,18 +92,58 @@ const Header = () => {
         <nav className="flex flex-col mt-5 px-3">
           {navItems.map((item) => (
             <div
-              className="flex items-center gap-4 rounded-sm px-6 py-3 my-1 hover:bg-blue-100 hover:text-blue-500 hover:border-l-4 hover:border-blue-500 transition-colors "
+              className="flex cursor-pointer items-center gap-4 rounded-sm px-6 py-3 my-1 hover:bg-blue-100 hover:text-blue-500 hover:border-l-4 hover:border-blue-500 transition-colors "
               key={item.href}
+              onClick={toggleMenu}
             >
               <span>{item.icons}</span>
 
-              <Link href="/" onClick={toggleMenu} className="block  ">
+              <Link href="/" className="block  ">
                 {item.label}
               </Link>
             </div>
           ))}
         </nav>
       </aside>
+
+      {/* Desktop Version */}
+      <header className="hidden md:block">
+        <div className="grid grid-cols-4 items-center p-6 border-b border-gray-300 relative">
+          <div className="col-span-3">
+            <div className="w-[500px] flex items-center gap-3 bg-gray-100 rounded-md py-2 px-4">
+              <span>
+                <AiOutlineSearch />
+              </span>
+              <input
+                type="text"
+                name=""
+                id=""
+                placeholder="Search transaction ID, date, amount..."
+                className="w-full bg-transparent text-sm text-black p-0 border-0 focus:ring-0 outline-0 placeholder:text-gray-400"
+              />
+            </div>
+          </div>
+
+          <div className="flex col-span-1 place-items-center gap-4">
+            <span className="border-r border-gray-200 px-2">
+              <AiOutlineBell size="25px" />
+            </span>
+
+            <span className="border-r border-gray-200 pr-4">
+              <AiOutlineMail size="25px" />
+            </span>
+
+            <div className="flex items-center gap-2">
+              <Avatar>
+                <AvatarImage src="https://github.com/shadcn.png" />
+                <AvatarFallback>CN</AvatarFallback>
+              </Avatar>
+
+              <div className="text-xs font-semibold">Sarah Miller</div>
+            </div>
+          </div>
+        </div>
+      </header>
     </div>
   );
 };
