@@ -31,7 +31,7 @@ export default function RootLayout({
       >
         <Header />
         <Sidebar />
-        <main className="bg-blue-50 min-h-[calc(100vh_-_113px)]  md:w-[calc(100vw_-_240px)] md:min-h-[calc(100vh_-_77px)] md:ml-60 p-6 ">
+        <main className="bg-blue-50 min-h-[calc(100vh_-_113px)] relative  md:w-[calc(100vw_-_240px)] md:min-h-[calc(100vh_-_77px)] md:ml-60 p-6 ">
           {children}
         </main>
       </body>

@@ -4,6 +4,7 @@ import EscrowChart from "./components/EscrowChart";
 import { useEffect, useState } from "react";
 import { Transaction, transactions as transactData } from "./data/transaction";
 import Pagination from "./components/Pagination";
+import ExtraInfo from "./components/ExtraInfo";
 
 export default function Home() {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
@@ -20,8 +21,10 @@ export default function Home() {
 
   return (
     <div className="">
-      <div className="flex items-center mb-10">
+      <div className=" flex flex-col md:flex-row items-center gap-8 mb-10 w-full">
         <EscrowChart />
+
+        <ExtraInfo />
       </div>
 
       <>

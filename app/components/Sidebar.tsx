@@ -31,7 +31,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="hidden md:block fixed z-11 left-0 top-0 min-h-screen w-60 border-r border-gray-300">
+    <div className="hidden md:block fixed z-20 left-0 top-0 min-h-screen w-60 border-r border-gray-300 bg-white">
       <aside>
         <div className="w-full flex justify-center border-b py-5 border-gray-300">
           <h3 className="font-extrabold text-3xl text-blue-600 -m-[0.1px]">
