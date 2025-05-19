@@ -107,8 +107,8 @@ const Header = () => {
       </aside>
 
       {/* Desktop Version */}
-      <header className="hidden md:block">
-        <div className="grid grid-cols-4 items-center p-6 border-b border-gray-300 relative">
+      <header className="hidden md:block min-h-[calc(100vh_-_130px)] ml-60 w-full">
+        <div className="grid grid-cols-4 items-center px-6 py-5 border-b border-gray-300 relative">
           <div className="col-span-3">
             <div className="w-[500px] flex items-center gap-3 bg-gray-100 rounded-md py-2 px-4">
               <span>
