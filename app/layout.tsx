@@ -27,11 +27,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased relative md:flex`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}
       >
         <Header />
         <Sidebar />
-        <main className="md:min-h-[calc(100vh_-_130px)] md:ml-60">
+        <main className="bg-blue-50 min-h-[calc(100vh_-_113px)]  md:w-[calc(100vw_-_240px)] md:min-h-[calc(100vh_-_77px)] md:ml-60 p-6 ">
           {children}
         </main>
       </body>

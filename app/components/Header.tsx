@@ -74,7 +74,7 @@ const Header = () => {
       </header>
 
       <div
-        className={`fixed inset-0 bg-black/80 transition-opacity duration-300 ${
+        className={`fixed inset-0 bg-black/80 z-10 transition-opacity duration-300 ${
           isOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
@@ -107,7 +107,7 @@ const Header = () => {
       </aside>
 
       {/* Desktop Version */}
-      <header className="hidden md:block min-h-[calc(100vh_-_130px)] ml-60 w-full">
+      <header className="hidden md:block w-[calc(100vw_-_240px)] ml-60 ">
         <div className="grid grid-cols-4 items-center px-6 py-5 border-b border-gray-300 relative">
           <div className="col-span-3">
             <div className="w-[500px] flex items-center gap-3 bg-gray-100 rounded-md py-2 px-4">
